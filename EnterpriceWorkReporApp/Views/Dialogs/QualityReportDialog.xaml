@@ -1,0 +1,51 @@
+<Window x:Class="EnterpriseWorkReport.Views.Dialogs.QualityReportDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Quality Report" Width="480" Height="520"
+        WindowStartupLocation="CenterOwner" ResizeMode="CanResizeWithGrip"
+        Background="{StaticResource AppBgBrush}" ShowInTaskbar="False">
+    <Border Padding="32">
+        <StackPanel>
+            <TextBlock x:Name="TitleText" Text="Add Quality Report" Style="{StaticResource PageTitle}" Margin="0,0,0,24"/>
+
+            <TextBlock Text="EMPLOYEE *" Style="{StaticResource FieldLabel}"/>
+            <ComboBox x:Name="EmployeeCombo" Style="{StaticResource ModernComboBox}" Margin="0,0,0,14"/>
+
+            <TextBlock Text="REPORT DATE *" Style="{StaticResource FieldLabel}"/>
+            <DatePicker x:Name="ReportDate" Margin="0,0,0,14"/>
+
+            <UniformGrid Columns="2" Margin="0,0,0,14">
+                <StackPanel Margin="0,0,8,0">
+                    <TextBlock Text="ACCURACY (%)" Style="{StaticResource FieldLabel}"/>
+                    <TextBox x:Name="AccuracyBox" Style="{StaticResource ModernTextBox}"/>
+                </StackPanel>
+                <StackPanel>
+                    <TextBlock Text="ERROR RATE (%)" Style="{StaticResource FieldLabel}"/>
+                    <TextBox x:Name="ErrorRateBox" Style="{StaticResource ModernTextBox}"/>
+                </StackPanel>
+            </UniformGrid>
+
+            <UniformGrid Columns="2" Margin="0,0,0,14">
+                <StackPanel Margin="0,0,8,0">
+                    <TextBlock Text="REWORK COUNT" Style="{StaticResource FieldLabel}"/>
+                    <TextBox x:Name="ReworkBox" Style="{StaticResource ModernTextBox}"/>
+                </StackPanel>
+                <StackPanel>
+                    <TextBlock Text="QUALITY SCORE" Style="{StaticResource FieldLabel}"/>
+                    <TextBox x:Name="ScoreBox" Style="{StaticResource ModernTextBox}"/>
+                </StackPanel>
+            </UniformGrid>
+
+            <TextBlock Text="REMARKS" Style="{StaticResource FieldLabel}"/>
+            <TextBox x:Name="RemarksBox" Style="{StaticResource ModernTextBox}" Margin="0,0,0,20"/>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button Content="Cancel" Style="{StaticResource OutlineButton}"
+                        Padding="16,10" Margin="0,0,10,0" Click="Cancel_Click"/>
+                <Button Content="Save" Style="{StaticResource PrimaryButton}"
+                        Padding="16,10" Click="Save_Click"/>
+            </StackPanel>
+            <TextBlock x:Name="ErrorText" Text="" Foreground="{StaticResource DangerBrush}" FontSize="12" Margin="0,8,0,0"/>
+        </StackPanel>
+    </Border>
+</Window>
